@@ -1,14 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
-namespace Regex
+namespace UserRegistration
 {
-    class ValidationRegex
+    internal class Validation_regex
     {
-        internal void Checkfirstname(string fname)
+        public void Checkfirstname(string firstname)
         {
-            throw new NotImplementedException();
+            string Firstnamepattern = "^[A-Z][a-z]{3,10}$";
+            if (Regex.IsMatch(firstname, Firstnamepattern))
+                Console.WriteLine("First Name is valid");
+            else
+                Console.WriteLine("Invalid name!!");
+        }
+        public void Checklastname(string Lastname)
+        {
+            string lastnamepattern = "^[A-Z][a-z]{3,10}$";
+            if (Regex.IsMatch(Lastname, lastnamepattern))
+                Console.WriteLine("Last Name is valid");
+            else
+                Console.WriteLine("Invalid name!!");
         }
     }
 }
