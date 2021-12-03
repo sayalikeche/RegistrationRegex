@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
-namespace UserRegistration
+namespace Regex
 {
-    internal class Validation_regex
+    internal class ValidationRegex
     {
         public void Checkfirstname(string firstname)
         {
@@ -24,6 +24,22 @@ namespace UserRegistration
                 Console.WriteLine("Last Name is valid");
             else
                 Console.WriteLine("Invalid name!!");
+        }
+        public void Checkemail(string Emailid)
+        {
+            string emailpattern = "^[a-z][a-zA-Z0-9._-]{3,20}@[a-z]{3,10}.(com)$";
+            if (Regex.IsMatch(Emailid, emailpattern))
+                Console.WriteLine("Email id is valid");
+            else
+                Console.WriteLine("Invalid email id!!");
+        }
+        public void Checkmobilenum(string Mobilenum)
+        {
+            string mobilenumpattern = "^[1,9]{2}-[6-9]{1}[0-9]{9}";
+            if (Regex.IsMatch(Mobilenum, mobilenumpattern))
+                Console.WriteLine("Mobile number is valid");
+            else
+                Console.WriteLine("Invalid mobile number!!");
         }
     }
 }
